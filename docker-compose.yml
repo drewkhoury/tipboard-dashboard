@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+
+  tipboard:
+    image: tipboard
+    ports:
+      - "7272:7272"
+    volumes:
+       - ./app:/app
+    depends_on:
+      - redis
+
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
